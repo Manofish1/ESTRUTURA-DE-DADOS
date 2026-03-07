@@ -97,3 +97,27 @@ int main()
    }
     return 0;
 }
+////////////////////////////////////////////////////////////////////////////
+
+//DADO VICIADO
+#include <stdio.h>
+
+int main()
+{
+   int dado;
+   int contadores[6] = {0};
+   int i;
+   
+   for(i = 0; i < 20; i++){
+       printf("lancamento %d: ", i);
+       scanf("%d", &dado);
+   
+   contadores[dado - 1]++;
+   }
+   printf("RESULTADO");
+   for(i = 0; i < 6; i++){
+   printf(" lado %d: ocorrencias\n", i + 1, contadores[i]);
+   
+   }
+    return 0;
+}
