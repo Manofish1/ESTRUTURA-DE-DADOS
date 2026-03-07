@@ -1,0 +1,71 @@
+//VETOR INVERTIDO
+#include <stdio.h>
+
+int main()
+{
+    int vet[5];
+    int i;
+    //ordem normal
+    for(i = 0; i < 5; i++) {
+        printf("digite o valor da poicao %d : ", i);
+        scanf("%d", &vet[i]);
+    }
+    //orden invertida
+    for(i = 4; i >= 0; i--)
+        printf("%d", vet[i]);
+    
+    return 0;
+}
+
+////////////////////////////////////////////////////////////////////
+
+//VETOR DOBRADO
+#include <stdio.h>
+
+int main()
+{
+    int vetN[10]; // N=normal
+    int vetD[10]; // D=dobrado
+    int i;
+    for(i = 0; i < 10; i++) {
+        printf("digite o valor da poicao %d : ", i);
+        scanf("%d", &vetN[i]);
+        
+        vetD[i] = vetN[i] * 2; //coloquei 10 no lugar do i e deu erro
+    }
+   printf("\noriginal | dobrado\n");
+   printf("-----------|-----------\n");
+    for(i = 0; i < 10; i++) {
+        printf("%-10d |  %d\n", vetN[i], vetD[i]);
+// O %-10d alinha o número à esquerda com 10 espaços de reserva
+    }
+    return 0;
+}
+
+OU
+//Normal e dobrado separados
+//VETOR DOBRADO
+#include <stdio.h>
+
+int main()
+{
+    int vetN[10]; // N=normal
+    int vetD[10]; // D=dobrado
+    int i;
+    for(i = 0; i < 10; i++) {
+        printf("digite o valor da poicao %d : ", i);
+        scanf("%d", &vetN[i]);
+        
+        vetD[i] = vetN[i] * 2; //coloquei 10 no lugar do i e deu erro
+    }
+   printf("\nORIGINAL");
+    for(i = 0; i < 10; i++) {
+        printf("%d\n", vetN[i]);
+    }
+    printf("\nDOBRADO");
+    for(i = 0; i < 10; i++) {
+        printf("%d\n", vetD[i]);
+    }
+    return 0;
+}
+/////////////////////////////////////////////////////////////////////////
