@@ -69,3 +69,31 @@ int main()
     return 0;
 }
 /////////////////////////////////////////////////////////////////////////
+//SUBTRACAO DE VETOR
+#include <stdio.h>
+
+int main()
+{
+   int vetA[5], vetB[5], vetR[5]; // R= resposta
+   int i;
+   
+   printf("vetor A");
+   for(i = 0; i < 5; i++) {
+       printf("vetor A %d: ", i);
+       scanf("%d", &vetA[i]);
+   }
+   printf("vetor B");
+   for(i = 0; i < 5; i++) {
+       printf("vetor B %d: ", i);
+       scanf("%d", &vetB[i]);
+   }
+   //(A - B)
+   for(i = 0; i < 5; i++){
+   vetR[i] = vetA[i] - vetB[i];
+   }
+   printf("o resultado de (A - B = ):\n ");
+   for(i = 0; i < 5; i++){
+       printf(" %d - %d = %d\n", vetA[i], vetB[i], vetR[i]);
+   }
+    return 0;
+}
