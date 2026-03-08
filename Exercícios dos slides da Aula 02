@@ -69,6 +69,7 @@ int main()
     return 0;
 }
 /////////////////////////////////////////////////////////////////////////
+
 //SUBTRACAO DE VETOR
 #include <stdio.h>
 
@@ -122,6 +123,7 @@ int main()
     return 0;
 }
 ///////////////////////////////////////////////////////////////////////////////////
+
 //ORDENACAO CRESCENTE
 #include <stdio.h>
 
@@ -185,6 +187,7 @@ int main(){
 return 0;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
 //MATRIZ SIMESTRICA
 //NO EXECICIO PEDE UMA MATRIZ 8x8 so que na hora de rodar vc vai ter que colocar 64 numeros ent botei 2x2 pra ficar mais simples
 
@@ -208,4 +211,45 @@ int main(){
  }
  printf("resultado: %s\n", sim ? "A matriz e simetrica." : "A matriz NAO e simetrica.");
 return 0;
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//DISTANCIA ENTRE AS CIDADES
+// ASSIM COMO A OUTRA TAMBEM DIMINUI PQ IRIA FICAR MUITO RUIM DIGITAR 64 VEZES ENTAO DEIXEI EM 4X4 AO INVES DE 8X8
+#include <stdio.h>
+
+int main() {
+    float mat[4][4];
+    float consumo;
+    int i, j;
+
+   
+    printf("Digite o consumo do veiculo (km/l): ");
+    scanf("%f", &consumo);
+
+    
+    for(i = 0; i < 4; i++) {
+        for(j = 0; j < 4; j++) {
+            if(i == j) {
+                mat[i][j] = 0; // Preenche a diagonal com 0
+            } else {
+                printf("Distancia da cidade %d para %d: ", i, j);
+                scanf("%f", &mat[i][j]);
+            }
+        }
+    }
+
+    
+    printf("\n--- Relatorio de Viagens (Ate 100km) ---\n"); //<--- pedi pra ia fz esses negocios de separaçao pq do jeito que eu tava fazendo tava ficando feio 
+    for(i = 0; i < 4; i++) {
+        for(j = 0; j < 4; j++) {
+        
+            if(mat[i][j] > 0 && mat[i][j] <= 100) {
+                printf("Cidade %d -> %d | %.1f km | Consumo: %.2f L\n", //<----
+                        i, j, mat[i][j], mat[i][j] / consumo);
+            }
+        }
+    }
+
+    return 0;
 }
