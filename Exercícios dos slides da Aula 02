@@ -122,19 +122,36 @@ int main()
     return 0;
 }
 ///////////////////////////////////////////////////////////////////////////////////
-//DADO VICIADO
+//ORDENACAO CRESCENTE
 #include <stdio.h>
 
 int main()
 {
-   int i, j, AUX
-   int vet[10]
+   int i, j, AUX;
+   int vet[10];
    
    for(i = 0; i < 10; i++){
-   printf("digite o numero %d: " i+1);
+   printf("digite o numero %d: ", i+1);
    scanf("%d", &vet[i]);
    }
-   for
-   
+   for(i = 0; i < 9; i++){
+   for(j = 0; j < 9 - i; j++){
+   if(vet[j] > vet[j] + 1){
+       AUX = vet[j];
+       vet[j] = vet[j + 1];
+       vet[j + 1] = AUX;
+   }
+   }
+   }
+   printf("a ordem crescente e:\n ");
+   for(i = 0; i<10; i++){
+       printf("%d", vet[i]);
+       
+   }
     return 0;
 }
+/////////////////////////////////////////////////////////////////////////////////////
+
+MATRIZES:
+
+
