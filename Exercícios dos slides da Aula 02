@@ -223,11 +223,9 @@ int main() {
     float consumo;
     int i, j;
 
-   
     printf("Digite o consumo do veiculo (km/l): ");
     scanf("%f", &consumo);
 
-    
     for(i = 0; i < 4; i++) {
         for(j = 0; j < 4; j++) {
             if(i == j) {
@@ -238,8 +236,6 @@ int main() {
             }
         }
     }
-
-    
     printf("\n--- Relatorio de Viagens (Ate 100km) ---\n"); //<--- pedi pra ia fz esses negocios de separaçao pq do jeito que eu tava fazendo tava ficando feio 
     for(i = 0; i < 4; i++) {
         for(j = 0; j < 4; j++) {
