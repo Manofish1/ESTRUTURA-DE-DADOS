@@ -154,4 +154,34 @@ int main()
 
 MATRIZES:
 
+//MULTIPLICACAO DE MATRIZES
+#include <stdio.h> 
 
+int main(){
+    
+    int A[4][4] = {{1,2}, {3,4}};
+    int B[4][4] = {{5,6}, {7,8}};
+    int C[4][4] = {0};
+    int i, j, k;
+    
+    for(i = 0; i<4; i++){
+        for(j = 0; j<4; j++){
+            for(k = 0; k<4; k++){
+                C[i][j] += A[i][k] * B[k][j]; // eu tinha botado o j no lugar do k na A e i no lugar do k na B ai deu erro
+                //+= E a soma um valor à esquerda de uma variável e armazena o resultado nela mesma
+                //Funciona como um atalho para x = x + y
+    }
+        }
+    }
+    printf("resultado da multiplicacao e:\n ");
+     for(i = 0; i<4; i++){
+        for(j = 0; j<4; j++){
+    printf(" %d", C[i][j]);
+        }
+        printf("\n");
+     }
+    //EU PERGUNTEI PRA IA PQ FICAVA APARECENDO 0 E ELA DISSE QUE E PQ COMO NAO PREENCHE AS 16 POSIÇOES O SISTEMA COMPLETA COM 0
+
+return 0;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////
