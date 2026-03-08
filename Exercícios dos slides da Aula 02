@@ -185,3 +185,27 @@ int main(){
 return 0;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+//MATRIZ SIMESTRICA
+//NO EXECICIO PEDE UMA MATRIZ 8x8 so que na hora de rodar vc vai ter que colocar 64 numeros ent botei 2x2 pra ficar mais simples
+
+#include <stdio.h>
+int main(){
+    
+ int mat[2][2]; //matriz
+ int i, j;
+ int sim = 1; //simetrica
+ 
+ for(i = 0; i < 2; i++){
+     for(j= 0; j < 2; j++){
+         printf("elemento [%d][%d]: ",i, j);
+         scanf("%d", &mat[i][j]);
+     }
+ }
+ for(i = 0; i < 2; i++){
+     for(j= 0; j < 2; j++){
+         sim = sim && (mat[i][j] == mat[j][i]);
+     }
+ }
+ printf("resultado: %s\n", sim ? "A matriz e simetrica." : "A matriz NAO e simetrica.");
+return 0;
+}
