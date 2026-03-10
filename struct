@@ -1,0 +1,29 @@
+//struct
+#include <stdio.h>
+
+int main()
+{
+    struct aluno{
+        char nome[50];
+        int matricula;
+    };
+    int i;
+    
+    struct aluno registro[3]; //quantidade de vezes que vai pedir
+    
+    for(i=0; i<3; i++){ // adicionou o for pra estrutura de reptiçao
+    
+    printf("digite o nome: ");
+    fgets(registro[i].nome, 50, stdin);
+    printf("digite a matricula: ");
+    scanf("%d", &registro[i].matricula);
+    while(getchar() != '\n');
+    }
+    
+    for(i=0; i<3; i++){
+    printf("\n nome: %s", registro[i].nome);
+    printf("\n matricula: %d", registro[i].matricula);
+    }
+
+    return 0;
+}
