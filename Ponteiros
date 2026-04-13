@@ -18,3 +18,29 @@ int main()
     return 0;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
+
+int main() {
+  int c;
+  int d;
+  int *ptr;
+  int i;
+  
+  printf("o valor de C:\n ");
+  scanf("%d",&c);
+  ptr = &c;
+    *ptr = 100;
+    
+    printf("o valor de D:\n ");
+  scanf("%d",&d);
+  ptr = &d;
+    *ptr = 150;
+    
+    printf("C vale %d\n", c);
+    printf("D vale %d\n", d);
+    
+    printf("HAHA trouxa mudei seus valores\n");
+   
+    return 0;
+}
