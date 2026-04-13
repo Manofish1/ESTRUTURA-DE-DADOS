@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+struct livro {
+    char autor[50]; //%s
+    char titulo[50]; 
+    int paginas; //d
+};
+
+int main()
+{
+    struct livro harry;
+    strcpy (harry.autor, "JK");
+    strcpy (harry.titulo, "bruxo");
+    harry.paginas = 25;
+    printf("autor: %s\ntitulo: %s\npaginas: %d\n", harry.autor, harry.titulo, harry.paginas);
+// usar %s em char e %d em int
+    return 0;
+}
+///////////////////////////////////////////////////////////////////////////////////////////////
