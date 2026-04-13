@@ -1,0 +1,65 @@
+//VETORES
+#include <stdio.h>
+
+int main() {
+   int A[10], B[10];
+   int i;
+   
+   for(i = 0; i<10; i++) {
+      printf("%d- digite os dados para o vetor A: ", i); 
+       scanf("%d", &A[i]);
+   }
+   printf("saida de dados do vetor A: \n");
+    for(i = 0; i<10; i++) {
+      printf("A[%d] = %d: \n ", i, A[i]); 
+   }
+   
+   printf("saida de dados do vetor B: \n");
+    for(i = 0; i<10; i++){
+        B[i] = A[i] *10;
+        printf("B[%d] = %d: \n ",i, B[i]);
+    }
+   
+    return 0;
+}
+
+///////////////////////////////////////////////////////
+
+//Média de Notas
+
+#include <stdio.h>
+
+int main() {
+   float notas[4];
+   int i;
+   float soma = 0;
+   float media;
+   
+   for(i = 0; i<4; i++) {
+      printf("informe sua primeira nota: "); 
+       scanf("%f", &notas[i]);
+       soma = soma + notas[i];
+       
+   }
+   media = soma / 4; 
+   printf("a sua media e: = %.2f \n ",media);
+    return 0;
+}
+///////////////////////////////////////////////////////////
+//NUMEROS INVERTIDOS
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   float v[4] = { 0, 1, 2, 3};
+   int i;
+  
+     printf("os numeros invertidos sao:");
+  for(i = 3; i >= 0; i--) {
+       printf("%.1f",v[i]);
+   }
+printf("\n");
+    
+    return 0;
+}
