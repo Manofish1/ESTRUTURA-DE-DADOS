@@ -44,3 +44,29 @@ int main() {
    
     return 0;
 }
+/////////////////////////////////////////////////////////////////////////////
+
+#include <stdio.h>
+
+int main()
+{
+   int x, *ptrx, **pptrx;
+   x = 5;
+   
+   printf("endereço de x e: %p\n",&x);
+   
+   ptrx = &x;
+   pptrx = &ptrx;
+   
+   /*
+   com isso eu consigo mudar o valor de x 
+   *ptrx = *ptrx + 10;
+   */
+   
+   printf("o valor de ptrx: %x\n",ptrx);
+   printf("o valor de &ptrx: %x\n",&ptrx);
+   printf("o valor de x apontado em ptr: %d\n",*ptrx);
+   
+   
+    return 0;
+}
