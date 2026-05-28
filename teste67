@@ -1,0 +1,57 @@
+
+#include <stdio.h>
+#include<stdio.h>
+#include<string.h>
+
+typedef struct {
+  unsigned long id;   // Transaction ID ( %lu)
+  char data[11];  // Date (formato DD/MM/AAAA)
+  char hora[9];     // Time (formato HH:MM:SS)
+  char bandeira[20];   // Type of Card (Visa, Mastercard, etc.)
+  char categoria[30];  // Merchant Group (Entertainment, Food, etc.)
+  float valor;      // Amount
+  int status;      // 0: Pendente, 1: Aprovada, 2: Rejeitada
+} transacao;
+
+char nome[11];
+
+int main()
+{
+ transacao t;
+ t.id = 123;
+ strcpy(t.data, "12/05/2026");
+strcpy(t.hora, "17:00:00");
+t.valor = 100.10;
+
+printf("seu id e: %lu\n sua data e: %s\n sua hora e: %s\n seu valor foi %2.f\n", t.id , t.data, t.hora, t.valor);
+
+FILE *arq = fopen ("teste.txt","w");
+/*FILE *arq vai pegar o endereço de de teste.txt o fopen vai servir pra abrir e o ("r") e pra ler (= read em ingles)
+caso for pra escerver usa ("w") de (write) */
+
+if(arq) {
+    printf("deu bom chefe olha la kkk\n");
+    fprintf(arq, " a hora exata e: %s", t.hora);
+    /* o arq ta com o endereço de teste.txt ent abre ele e manda esse print pra la
+   e como o printf so que ele manda pro arquivo (file) ao inves de pro console onde roda o cod */
+}
+  
+
+else {
+    (arq == NULL);
+printf("nao funcionou chefe");  
+}
+fclose(arq);
+
+
+ printf("agora digita seu nome: ");
+   fgets(nome,11,stdin);
+   /*
+   basicamente o scanf so que com espaço so que nele vc tem que especificar as coisas ex o tamanho nesse caso 11
+   stdin e pra poder escrever no console
+   */
+   printf("seu nome e: %s\n", nome);
+
+
+    return 0;
+}
