@@ -1,0 +1,115 @@
+
+#include <stdio.h>
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+typedef struct {
+  unsigned long id;   // Transaction ID ( %lu)
+  char data[11];  // Date (formato DD/MM/AAAA)
+  char hora[9];     // Time (formato HH:MM:SS)
+  char bandeira[20];   // Type of Card (Visa, Mastercard, etc.)
+  char categoria[30];  // Merchant Group (Entertainment, Food, etc.)
+  float valor;      // Amount
+  int status;      // 0: Pendente, 1: Aprovada, 2: Rejeitada
+} transacao;
+
+char nome[11];
+
+char linha[20]; // usei no fgets
+
+char *tk; //usar no strtok, tk = token
+char dados[] = "123,visa,100";
+
+int main()
+{
+ transacao t;
+ t.id = 123;
+ strcpy(t.data, "12/05/2026");
+strcpy(t.hora, "17:00:00");
+t.valor = 100.10;
+
+printf("seu id e: %lu\n sua data e: %s\n sua hora e: %s\n seu valor foi %.2f\n", t.id , t.data, t.hora, t.valor);
+
+//FILE,FOPEN,FCLOSE
+printf("\n");//////////////////////////////////////////////////////////////////////////////////
+
+FILE *arq = fopen ("teste.txt","w");
+/*FILE *arq vai pegar o endereço de de teste.txt o fopen vai servir pra abrir e o ("r") e pra ler (= read em ingles)
+caso for pra escerver usa ("w") de (write) */
+
+
+
+if(arq) {
+    printf("deu bom chefe olha la kkk\n");
+    fprintf(arq, " a hora exata e: %s", t.hora);
+    /* o arq ta com o endereço de teste.txt ent abre ele e manda esse print pra la
+   e como o printf so que ele manda pro arquivo (file) ao inves de pro console onde roda o cod */
+}
+  
+else {
+    (arq == NULL);
+printf("nao funcionou chefe");  
+}
+
+fclose(arq);
+
+
+//fgets
+printf("\n");////////////////////////////////////////////////////////////////////////////////////
+
+ arq = fopen ("teste.txt","r"); // nao precisa de FILE *arq dnv so fopen
+
+ printf("agora digita seu nome: ");
+   fgets(nome,11,stdin);
+   /*
+   basicamente o scanf so que com espaço so que nele vc tem que especificar as coisas ex o tamanho nesse caso 11
+   stdin e pra poder escrever no console
+   */
+   printf("seu nome e: %s\n", nome);
+    fgets(linha,20,arq);
+   printf("na linha do arquivo ta escrito: %s", linha);
+   
+fclose(arq);
+
+
+//STRTOK
+printf("\n");/////////////////////////////////////////////////////////////////////////////////
+
+tk = strtok(dados,",");
+/* strtok serve pra dividir uma string em partes menores meio que quebra ela ate uma parte que vc delimita
+no casso desse cod ela vai pegar as informaçoes do char dados e vai separar toda vez que tiver virgula
+ ela vai andando letra por letra ate achar a virgula
+strtok = string token
+*/
+
+while(tk != NULL) {
+//
+
+printf("os dados sao %s\n",tk);
+
+tk = strtok(NULL, ",");
+// esse NULL vai servir pra limpar a "primeira" palvra pra poder continuar com as outras
+}
+
+printf("\n");
+//ATOI,ATOF E strtoul
+///////////////////////////////////////////////////////////////////////////////////
+
+
+char c[] = "123abc";
+
+int x = atoi(c);
+/*atoi tranforma string em numero
+se ele encontar um caractere invalido dependendo de onde ele esta ou ele reorna 0 caso comece com letras
+caso comece com numeros e ele encontre letras ele so retorna os numeros
+se encontrar um valido ele manda o numero normalmente
+o mesmo se aplica pros outros
+atoi tranforma a string em int, atof em float e strtoul em unsigned long
+*/ //foi dificil aprender isso pq ngm explicava direito
+
+printf("vai dar: %d\n",x);
+
+
+    return 0;
+}
